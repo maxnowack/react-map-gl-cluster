@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable flowtype/no-types-missing-file-annotation */
 import { Component, PureComponent } from 'react'
+import Supercluster from 'supercluster'
 
 export type SuperclusterFeature = {
   type: 'Feature',
@@ -33,6 +34,7 @@ export type ClusterReduceFunction = (
 ) => void;
 
 export type ClusterComponent = Component<ClusterComponentProps, any>
+  | React.FC<ClusterComponentProps>
 
 
 type Props = {
@@ -68,5 +70,5 @@ type Props = {
 
 
 export default class Cluster extends PureComponent<Props, any> {
-
+  getCluster(): Supercluster
 }
